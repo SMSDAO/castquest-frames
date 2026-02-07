@@ -171,7 +171,7 @@ Gamification layer for user engagement.
 
 **Steps:**
 
-**Creator Side:**
+#### Creator Side
 
 1. **Create Quest**
    - Go to `/quests/create`
@@ -196,7 +196,7 @@ Gamification layer for user engagement.
    - Set start/end dates
    - Publish to marketplace
 
-**User Side:**
+#### User Side
 
 1. **Discover Quest**
    - Browse at `/quests`

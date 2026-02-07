@@ -23,11 +23,15 @@ CastQuest is a modular Web3 social protocol where **Media → Templates → Fram
 
 ### Core Principles
 
-1. **Sovereignty First** - Operators control everything
-2. **Media-First** - Content drives the protocol
-3. **Composability** - Everything is modular and reusable
-4. **Transparency** - All flows are visible and auditable
-5. **AI-Native** - Smart Brain optimizes and automates
+1. **Sovereignty First** - Operators maintain full control over their content, data, and automation strategies. No hidden mechanisms or forced upgrades.
+
+2. **Media-First** - Every frame starts with media. Content is the primary driver, with all other features (mints, quests, templates) serving the creator's media.
+
+3. **Composability** - All components are modular and can be mixed, matched, and extended. Frames can be templates, templates can be marketed, workers can be customized.
+
+4. **Transparency** - All protocol operations are visible through JSON data surfaces, logs, and admin dashboards. No black boxes.
+
+5. **AI-Native** - Smart Brain provides intelligent assistance for pricing, risk detection, and optimization, but always operates in audit mode with operator approval.
 
 ### Architecture Diagram
 

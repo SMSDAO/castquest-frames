@@ -622,7 +622,7 @@ Response:
   },
   "performance": {
     "tasksCompleted": 1234,
-    "tasksF ailed": 5,
+    "tasksFailed": 5,
     "avgProcessingTime": 1250,
     "uptime": "99.9%"
   }
