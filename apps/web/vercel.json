@@ -1,5 +1,6 @@
 {
   "framework": "nextjs",
+  "$comment": "Build command navigates to monorepo root. If directory structure changes, update this path.",
   "buildCommand": "cd ../.. && pnpm install && pnpm --filter @castquest/web build",
   "devCommand": "pnpm dev",
   "installCommand": "pnpm install",

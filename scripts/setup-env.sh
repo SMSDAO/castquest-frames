@@ -65,7 +65,7 @@ setup_database() {
         # Check if database migrations need to run
         if command -v pnpm &> /dev/null; then
             echo -e "${YELLOW}Running database migrations...${NC}"
-            pnpm --filter @castquest/core-services db:migrate || echo -e "${YELLOW}⚠️  Database migration skipped (configure DATABASE_URL first)${NC}"
+            pnpm --filter @castquest/core-services db:migrate 2>&1 || echo -e "${YELLOW}⚠️  Database migration skipped. Configure DATABASE_URL in .env.local if you need database functionality.${NC}"
         fi
     fi
 }

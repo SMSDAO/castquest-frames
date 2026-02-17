@@ -8,8 +8,11 @@ Write-Host ""
 $nodeVersion = node -v
 Write-Host "Node.js version: $nodeVersion" -ForegroundColor Cyan
 
-if ($nodeVersion -notmatch "v2[4-9]") {
-    Write-Host "⚠️  Warning: Node.js 24+ required for admin builds" -ForegroundColor Yellow
+# Extract major version (handle v24.1.0 format)
+$majorVersion = [int]($nodeVersion -replace 'v(\d+)\..*', '$1')
+
+if ($majorVersion -lt 24) {
+    Write-Host "⚠️  Warning: Node.js 24+ required for admin builds (found: $nodeVersion)" -ForegroundColor Yellow
     exit 1
 }
 

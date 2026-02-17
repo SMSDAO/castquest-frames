@@ -29,7 +29,7 @@
         "startDragging": true
       },
       "http": {
-        "all": true,
+        "all": false,
         "request": true,
         "scope": ["http://localhost:*", "https://*.castquest.xyz"]
       }

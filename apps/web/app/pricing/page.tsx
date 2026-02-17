@@ -127,7 +127,11 @@ export default function PricingPage() {
                 </ul>
 
                 <GlowButton
-                  className={`w-full ${plan.highlighted ? 'bg-gradient-to-r from-emerald-600 to-cyan-600 hover:from-emerald-500 hover:to-cyan-500' : ''}`}
+                  className={`w-full ${
+                  plan.highlighted
+                    ? "bg-gradient-to-r from-emerald-600 to-cyan-600 hover:from-emerald-500 hover:to-cyan-500"
+                    : ""
+                }`}
                   onClick={() => {
                     if (plan.name === "Enterprise") {
                       window.location.href = "mailto:enterprise@castquest.xyz";
