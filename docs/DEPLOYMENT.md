@@ -19,11 +19,13 @@ This guide covers deployment strategies for the CastQuest Frames platform, inclu
 ## Prerequisites
 
 ### Required Tools
-- Node.js 20+ (LTS recommended)
+- **Node.js 24+** (for admin/backend builds)
+- **Node.js 20+** (minimum for frontend runtime)
 - pnpm 9+
 - Git
 - PostgreSQL 15+
 - Redis 7+ (for admin dashboard)
+- **Rust** (for admin desktop app builds)
 
 ### Access Requirements
 - GitHub repository access
@@ -158,6 +160,29 @@ PORT=3010 pnpm start
 ## Vercel Deployment
 
 Vercel is the recommended platform for Next.js deployments.
+
+### Automated Deployment (Recommended)
+
+Use the provided automation scripts:
+
+```bash
+# 1. Setup environment
+bash scripts/setup-env.sh production
+
+# 2. Build and prepare for Vercel
+bash scripts/deploy-vercel.sh
+
+# 3. Deploy with Vercel CLI
+cd apps/web
+vercel --prod
+```
+
+**Key Features:**
+- Node.js 24+ for build tooling
+- Node.js 20+ runtime for serverless functions
+- Automatic dependency installation
+- Build optimization
+- Environment validation
 
 ### User Dashboard Deployment
 

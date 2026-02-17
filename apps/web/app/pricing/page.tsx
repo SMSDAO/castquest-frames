@@ -1,7 +1,6 @@
 "use client";
 
-import { GlowButton, DashboardStat } from "@castquest/neo-ux-core";
-import { neo } from "@castquest/neo-ux-core";
+import { GlowButton } from "@castquest/neo-ux-core";
 import { Check } from "lucide-react";
 import Link from "next/link";
 
@@ -128,9 +127,7 @@ export default function PricingPage() {
                 </ul>
 
                 <GlowButton
-                  variant={plan.highlighted ? "accent" : "secondary"}
-                  size="lg"
-                  className="w-full"
+                  className={`w-full ${plan.highlighted ? 'bg-gradient-to-r from-emerald-600 to-cyan-600 hover:from-emerald-500 hover:to-cyan-500' : ''}`}
                   onClick={() => {
                     if (plan.name === "Enterprise") {
                       window.location.href = "mailto:enterprise@castquest.xyz";
@@ -158,12 +155,12 @@ export default function PricingPage() {
           </p>
           <div className="flex gap-4 justify-center">
             <Link href="/dashboard">
-              <GlowButton variant="accent" size="lg">
+              <GlowButton className="px-6 py-3 bg-gradient-to-r from-emerald-600 to-cyan-600 hover:from-emerald-500 hover:to-cyan-500">
                 Start Free
               </GlowButton>
             </Link>
             <Link href="/about">
-              <GlowButton variant="secondary" size="lg">
+              <GlowButton className="px-6 py-3">
                 Learn More
               </GlowButton>
             </Link>

@@ -99,12 +99,12 @@ export default function AboutPage() {
           </p>
           <div className="flex gap-4 justify-center">
             <Link href="/dashboard">
-              <GlowButton variant="accent" size="lg">
+              <GlowButton className="px-6 py-3 bg-gradient-to-r from-emerald-600 to-cyan-600 hover:from-emerald-500 hover:to-cyan-500">
                 Get Started
               </GlowButton>
             </Link>
             <Link href="/pricing">
-              <GlowButton variant="secondary" size="lg">
+              <GlowButton className="px-6 py-3">
                 View Pricing
               </GlowButton>
             </Link>
