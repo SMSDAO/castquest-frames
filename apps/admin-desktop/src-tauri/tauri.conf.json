@@ -1,0 +1,64 @@
+{
+  "$schema": "../node_modules/@tauri-apps/cli/schema.json",
+  "build": {
+    "beforeDevCommand": "cd ../admin && pnpm dev",
+    "beforeBuildCommand": "cd ../admin && pnpm build",
+    "devPath": "http://localhost:3001",
+    "distDir": "../admin/.next"
+  },
+  "package": {
+    "productName": "CastQuest Admin",
+    "version": "0.1.0"
+  },
+  "tauri": {
+    "allowlist": {
+      "all": false,
+      "shell": {
+        "all": false,
+        "open": true
+      },
+      "window": {
+        "all": false,
+        "close": true,
+        "hide": true,
+        "show": true,
+        "maximize": true,
+        "minimize": true,
+        "unmaximize": true,
+        "unminimize": true,
+        "startDragging": true
+      },
+      "http": {
+        "all": true,
+        "request": true,
+        "scope": ["http://localhost:*", "https://*.castquest.xyz"]
+      }
+    },
+    "bundle": {
+      "active": true,
+      "targets": "all",
+      "identifier": "xyz.castquest.admin",
+      "icon": [
+        "icons/32x32.png",
+        "icons/128x128.png",
+        "icons/128x128@2x.png",
+        "icons/icon.icns",
+        "icons/icon.ico"
+      ]
+    },
+    "security": {
+      "csp": null
+    },
+    "windows": [
+      {
+        "fullscreen": false,
+        "resizable": true,
+        "title": "CastQuest Admin",
+        "width": 1400,
+        "height": 900,
+        "minWidth": 1200,
+        "minHeight": 800
+      }
+    ]
+  }
+}
