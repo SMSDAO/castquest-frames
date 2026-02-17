@@ -20,11 +20,11 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                 <a href="/" className="text-neutral-400 hover:text-emerald-400 transition-colors">
                   Home
                 </a>
-                <a href="/frames" className="text-neutral-400 hover:text-emerald-400 transition-colors">
-                  Frames
+                <a href="/about" className="text-neutral-400 hover:text-emerald-400 transition-colors">
+                  About
                 </a>
-                <a href="/quests" className="text-neutral-400 hover:text-emerald-400 transition-colors">
-                  Quests
+                <a href="/pricing" className="text-neutral-400 hover:text-emerald-400 transition-colors">
+                  Pricing
                 </a>
                 <a href="/dashboard" className="text-neutral-400 hover:text-emerald-400 transition-colors">
                   Dashboard
