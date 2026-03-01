@@ -2,7 +2,7 @@
 
 ![Dependency Health](https://img.shields.io/badge/dependency--health-passing-brightgreen)
 ![Build Status](https://github.com/CastQuest/castquest-frames/workflows/CI/badge.svg)
-![Node Version](https://img.shields.io/badge/node-20.19.6-green)
+![Node Version](https://img.shields.io/badge/node-24.1.0-green)
 ![pnpm Version](https://img.shields.io/badge/pnpm-9.0.0-blue)
 
 CAST QUEST Frames is a Web3-native social photo protocol that feels like Instagram, mints like Zora, extends like Farcaster Frames, and builds like Remix — powered by a Smart Brain multi-agent AI.
@@ -69,6 +69,23 @@ nvm use  # Automatically uses Node 20.19.6
 
 CastQuest Frames includes two production-ready dashboards with **neo-glow theme** for creators and administrators.
 
+### Screenshots
+
+<table>
+<tr>
+<td width="50%">
+<h4>👤 User Dashboard</h4>
+<img src="https://via.placeholder.com/600x400/1a1a2e/00d9ff?text=User+Dashboard+Screenshot" alt="User Dashboard" />
+<p><em>Creator-focused dashboard with AI tools and community features</em></p>
+</td>
+<td width="50%">
+<h4>👑 Admin Dashboard</h4>
+<img src="https://via.placeholder.com/600x400/1a1a2e/00d9ff?text=Admin+Dashboard+Screenshot" alt="Admin Dashboard" />
+<p><em>Protocol management console with comprehensive monitoring</em></p>
+</td>
+</tr>
+</table>
+
 ### 👤 User Dashboard
 **Port:** 3000 | **URL:** http://localhost:3000/dashboard
 
@@ -110,10 +127,13 @@ cd apps/admin && pnpm dev -- -p 3010
 ### 🚀 Quick Start - Both Dashboards
 
 ```bash
-# Install dependencies
+# 1. Setup environment variables (first time only)
+bash scripts/setup-env.sh
+
+# 2. Install dependencies
 pnpm install
 
-# Run both dashboards using self-healing script (recommended)
+# 3. Run both dashboards using self-healing script (recommended)
 chmod +x scripts/self-healing-ui.sh
 ./scripts/self-healing-ui.sh
 
@@ -126,6 +146,40 @@ cd apps/admin && pnpm dev -- -p 3010
 ```
 
 📖 **Full Documentation:** See [docs/DASHBOARDS.md](./docs/DASHBOARDS.md) for complete setup, configuration, deployment, and troubleshooting guides.
+
+## 🖥️ Admin Desktop Application
+
+CastQuest also provides a **native desktop application** for administrators using Tauri.
+
+### Building Admin Desktop (.exe for Windows)
+
+```bash
+# Prerequisites: Node.js 24+ and Rust installed
+
+# Navigate to admin-desktop
+cd apps/admin-desktop
+
+# Build for Windows
+pnpm build:windows
+
+# Output: src-tauri/target/release/castquest-admin.exe
+# Can be renamed to admin.exe for distribution
+```
+
+**Windows PowerShell Build Script:**
+```powershell
+# From repository root
+.\scripts\build-admin-desktop.ps1
+```
+
+📖 **Full Documentation:** See [apps/admin-desktop/README.md](./apps/admin-desktop/README.md) for detailed build instructions and troubleshooting.
+
+### Desktop App Features
+- Native window controls
+- Full admin dashboard access
+- Automatic sync with admin web routes
+- Self-contained executable (no Node.js required for end users)
+- Supports Windows, macOS, and Linux
 
 ## 🏥 Repository Health
 
@@ -166,6 +220,35 @@ bash scripts/repair-dependencies.sh
 - 📝 **Comprehensive Reports**: JSON output for CI/CD integration
 
 📖 **Full Documentation:** See [docs/DEPENDENCY-HEALTH.md](./docs/DEPENDENCY-HEALTH.md) for detailed health monitoring guide.
+
+## 🚀 Deployment
+
+### Vercel Deployment (Frontend)
+
+The web frontend is configured for deployment on Vercel:
+
+```bash
+# Setup environment
+bash scripts/setup-env.sh production
+
+# Build for Vercel
+bash scripts/deploy-vercel.sh
+
+# Deploy with Vercel CLI
+npm i -g vercel
+vercel --prod
+```
+
+**Configuration:**
+- `apps/web/vercel.json` - Vercel-specific settings
+- Node.js 20+ runtime for serverless functions
+- Node.js 24+ for build tooling
+- Automatic environment variable management
+
+**Environment Variables:**
+Copy `.env.example` to Vercel project settings or use `.env.production` locally.
+
+📖 **Full Documentation:** See [docs/DEPLOYMENT.md](./docs/DEPLOYMENT.md) for complete deployment guide.
 
 ## 💸 Sponsors & Partners
 

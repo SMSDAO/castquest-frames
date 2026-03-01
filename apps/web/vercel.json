@@ -1,0 +1,29 @@
+{
+  "framework": "nextjs",
+  "$comment": "Build command navigates to monorepo root. If directory structure changes, update this path.",
+  "buildCommand": "cd ../.. && pnpm install && pnpm --filter @castquest/web build",
+  "devCommand": "pnpm dev",
+  "installCommand": "pnpm install",
+  "outputDirectory": ".next",
+  "rewrites": [
+    {
+      "source": "/api/:path*",
+      "destination": "/api/:path*"
+    }
+  ],
+  "env": {
+    "NODE_VERSION": "24"
+  },
+  "build": {
+    "env": {
+      "NODE_VERSION": "24"
+    }
+  },
+  "functions": {
+    "app/**/*.{js,ts,tsx}": {
+      "runtime": "nodejs20.x",
+      "maxDuration": 30
+    }
+  },
+  "regions": ["iad1"]
+}

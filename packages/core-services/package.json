@@ -56,5 +56,9 @@
     "web3"
   ],
   "author": "CastQuest",
-  "license": "MIT"
+  "license": "MIT",
+  "engines": {
+    "node": ">=24.0.0",
+    "pnpm": ">=9.0.0"
+  }
 }
